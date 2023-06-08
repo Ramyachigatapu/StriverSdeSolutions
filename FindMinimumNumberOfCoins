@@ -1,0 +1,20 @@
+from os import *
+from sys import *
+from collections import *
+from math import *
+
+denominations = [1, 2, 5, 10, 20, 50, 100, 500, 1000]
+
+
+def findMinimumCoins(amount):
+    cnt = 0
+    for i in reversed(denominations):
+        if i <= amount:
+
+            rem = amount // i
+            amount -= i*rem
+            cnt += rem
+    return cnt
+
+    # Write your code here
+    pass
